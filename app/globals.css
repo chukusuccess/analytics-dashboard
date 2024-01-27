@@ -2,32 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes spin {
+  to {
+    transform: rotate(180deg);
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.spinn:hover {
+  animation: spin 250ms linear 100ms;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes ping {
+  95%,
+  100% {
+    transform: scale(1.1);
+    opacity: 50%;
   }
+}
+.pingg:hover {
+  animation: ping 200ms cubic-bezier(0, 0, 0.2, 1) 100ms;
+}
+
+.graphbg {
+  background-image: url("/graphbg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.noscrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.noscrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+:where(.css-dev-only-do-not-override-1qhpsh8).ant-select-single
+  .ant-select-selector {
+  border-radius: 200px;
 }

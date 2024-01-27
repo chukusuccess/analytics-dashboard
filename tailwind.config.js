@@ -7,10 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      screens: {
+        "sm": "768px", // Small screens (>= 768px)
+        "md": "1140px", // Medium screens (>= 1140px)
+        "lg": "1280px", // Large screens (>= 1280px)
+        "xl": "1440px", // Extra large screens (>= 1440px)
       },
     },
   },
