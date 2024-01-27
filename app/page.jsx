@@ -102,7 +102,7 @@ export default function Home() {
               <h1 className="text-[#26282c] font-semibold text-lg ">
                 Sales Trends
               </h1>
-              <span className="cursor-pointer text-[#3A3F51] font-medium text-sm ">
+              <span className="cursor-pointer text-[#3A3F51] font-medium text-sm flex items-center gap-2">
                 <span className="hidden sm:flex">Sort by: </span>
                 <Select
                   defaultValue="monthly"
