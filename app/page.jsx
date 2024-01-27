@@ -1,11 +1,12 @@
 "use client";
 
-import { Select } from "antd";
+import { Dropdown } from "antd";
 
 import { SalesTrendsCard } from "./components/SalesTrendsCard";
 import { RecentOrdersCard } from "./components/RecentOrdersCard";
 import { QuickSummary } from "./components/QuickSummary";
 import { Leaderboard } from "./components/Leaderboard";
+import { DownOutlined } from "@ant-design/icons";
 
 const items = [
   {
@@ -104,37 +105,18 @@ export default function Home() {
               </h1>
               <span className="cursor-pointer text-[#3A3F51] font-medium text-sm flex items-center gap-2">
                 <span className="hidden sm:flex">Sort by: </span>
-                <Select
-                  defaultValue="monthly"
-                  style={{
-                    width: 100,
+                <Dropdown
+                  menu={{
+                    items,
                   }}
-                  options={[
-                    {
-                      value: "weekly",
-                      label: "Weekly",
-                    },
-                    {
-                      value: "monthly",
-                      label: "Monthly",
-                    },
-                    {
-                      value: "yearly",
-                      label: "Yearly",
-                    },
-                  ]}
-                />
-                {/* <select
-                  defaultValue={"weekly"}
+                  trigger={["click"]}
                   className="px-2 py-1 border border-[#e9e9e9] rounded-full hover:bg-slate-100 duration-300 transition-all ease-in-out cursor-pointer"
                 >
-                  <option className="mt-1 p-1" value={"weekly"}>
-                    Weekly
-                  </option>
-                  <option className="mt-1 p-1" value={"monthly"}>
-                    Monthly
-                  </option>
-                </select> */}
+                  <div className="flex gap-2">
+                    <span>Monthly</span>
+                    <DownOutlined />
+                  </div>
+                </Dropdown>
               </span>
             </div>
             <SalesTrendsCard />
